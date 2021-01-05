@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cscoa1:war">
+    <output-path>$PROJECT_DIR$/classes/artifacts/cscoa</output-path>
+    <root id="archive" name="cscoa1_war.war">
+      <element id="artifact" artifact-name="cscoa1:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="cors-filter-1.9.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

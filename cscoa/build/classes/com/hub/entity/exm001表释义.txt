@@ -1,0 +1,44 @@
+staff			    申请人
+payee			    受款人
+approvedstaff	    审核人
+closedstaff		    记帐人
+inputer			    输入人
+
+prepayamt		    暂付金额
+amount			    实付金额
+totalamount	   	    费用合计
+backamount		    缴回金额
+paytype			    领款方式
+
+revtype			    受款人性质
+payeename		    受款人姓名
+feeunitno		    部门编码
+feeunit			    部门名称
+revcompany		    收款单位
+revcompanyname	    收款单位名称
+
+proceedingname	    费用事项名称
+proceedingno	    费用事项
+feecompany		    费用归属公司
+
+checkid			   验收单号
+backprepayno	    缴回单号
+prepayno		    暂付单号
+
+routid			    流程id
+affirmexplain	    确认说明
+
+payestate		    付款状态              
+isclosed		    记帐状态
+isapproved		    审核状态
+status			    审批状态
+affirmestate	    财务确认状态
+
+affirmtime		    确认时间
+paytime			    付款时间
+inputdate		    输入时间
+approvedtime	    审核时间
+closedtime		    记帐时间
+checkdate		    申请日期
+prepaydate		    预期付款日期
+remark			    事项说明                 

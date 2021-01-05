@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.hub.dao.SignAuditPageDao">
+
+	<resultMap type="com.hub.entity.SignPage" id="SignAuditPageList">
+		<result column="checkid" property="checkid" />
+		<result column="staff" property="staff" />
+		<result column="filetype" property="filetype" />
+		<result column="header" property="header"  />
+		<result column="isdeptapproved" property="zt"  />
+	</resultMap>
+
+	<select id="getSignAllAudit" resultMap="SignAuditPageList" >
+		select top (10*(${pagenum}+1)) 
+			fpm001.id,fpm001.checkid,fpm001.staff,fpm001.filetype,fpm001.header,fpm001.inputdate,fpm001.isdeptapproved
+		from taskdsh,fpm001
+		where taskdsh.systemcode=fpm001.checkid
+		and taskdsh.isdeptapproved is null
+		and taskdsh.[operators]=#{username}
+		and fpm001.id not in 
+		(select top (${pagenum}*10) fpm001.id from fpm001,taskdsh
+		where  taskdsh.isdeptapproved is null
+		and taskdsh.systemcode=fpm001.checkid
+		and taskdsh.[operators]=#{username}
+		order by fpm001.inputdate desc)
+		order by fpm001.inputdate desc
+		
+	</select>
+	
+	<select id="getSignAuditBycondition" resultMap="SignAuditPageList" >
+		{call hh_gettablessign(#{0},#{1},#{2},#{3},#{4})}  
+	</select> 
+	
+	<select id="getSignAuditSize" resultType="Integer" >
+		select count(*) from (select DISTINCT fpm001.checkid
+		from taskdsh,fpm001
+		where taskdsh.systemcode=fpm001.checkid
+		and taskdsh.isdeptapproved is null
+		and taskdsh.[operators]=#{username}) as a
+	</select>
+	
+</mapper>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.hub.dao.SdjkAuditPageDao">
+
+	<resultMap type="com.hub.entity.AuditPage" id="AuditPageList">
+		<id column="id" property="id" />
+		<result column="deptapprovedtime" property="date" jdbcType="VARCHAR" />
+		<result column="checkid" property="number" />
+		<result column="proceedingname" property="name" typeHandler="com.hub.typehander.SplitFiveTypeHander"/>
+		<result column="isdeptapproved" property="zt" />
+		<result column="totalamount" property="totalamount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+	</resultMap>
+	
+	<select id="getAllAudit" resultMap="AuditPageList" >
+		<!-- select top 20 id,inputdate,checkid,proceedingname,isapproved from exm001 order by inputdate desc -->
+	<!-- 	select taskdsh.id,inputdate,checkid,proceedingname,isapproved 
+		from exm001  inner join taskdsh on exm001.checkid= taskdsh.systemcode 
+		where taskdsh.isdeptapproved is null order by exm001.inputdate desc -->
+<!--20170426:hub注释掉 select taskdsh.id,inputdate,checkid,proceedingname,taskdsh.isdeptapproved 
+		from exm001  inner join taskdsh on exm001.checkid=taskdsh.systemcode 
+		where taskdsh.operators=#{0} order by exm001.inputdate desc -->
+		<!-- 分页查询 20170426:hub-->
+		<!--也可以用
+		 select top (10*(${pagenum}+1)) exm001.id,inputdate,exm001.checkid,proceedingname,exm001.IsDeptApproved,exm001.totalamount
+		from (select [operators],systemcode,isdeptapproved from taskdsh group by [operators],systemcode,isdeptapproved) as A,exm001 
+		where A.systemcode=exm001.checkid
+		and A.isdeptapproved is null
+		and (paychecksign='1' and feekink='f01') and  billtype='01'
+		and A.[operators]=${username}
+		and exm001.id not in 	
+		(select top (${pagenum}*10) exm001.id from exm001,
+		(select operators,systemcode,isdeptapproved from taskdsh group by operators,systemcode,isdeptapproved) as D
+		where  D.isdeptapproved is null
+		and D.systemcode=exm001.checkid
+		and A.[operators]=${username}
+		and (paychecksign='1' and feekink='f01') and  billtype='01'
+		order by exm001.inputdate desc)
+		order by exm001.inputdate desc -->
+		select top (10*(${pagenum}+1)) rtm002.id,inputdate,rtm002.checkid,proceedingname,rtm002.IsDeptApproved,rtm002.totalamount
+		from taskdsh,rtm002
+		where taskdsh.systemcode=rtm002.checkid
+		and taskdsh.isdeptapproved is null
+		and  billtype='04'
+		and taskdsh.[operators]=#{username}
+		and rtm002.id not in 	
+		(select top (${pagenum}*10) rtm002.id from rtm002,taskdsh
+		where  taskdsh.isdeptapproved is null
+		and taskdsh.systemcode=rtm002.checkid
+		and taskdsh.[operators]=#{username}
+		and  billtype='04'
+		order by rtm002.inputdate desc)
+		order by rtm002.inputdate desc
+	</select>
+	
+	<select id="getAuditBycondition" resultMap="AuditPageList" >
+		<!-- exec hh_gettables #{0},#{1},#{2},#{3},#{4} -->
+		 {call hh_gettablessdjk(#{0},#{1},#{2},#{3},#{4})}  
+	</select>
+	
+	<update id="updateStatus" >
+		UPDATE rtm002 SET isapproved = 0,approvedstaff=#{1},approvedtime=#{2} where id=#{0}
+	</update> 
+	
+	<select id="getAuditSize" resultType="Integer" >
+		select count(*) from (select DISTINCT rtm002.checkid from rtm002,taskdsh
+		where taskdsh.operators=#{username}
+		and rtm002.checkid=taskdsh.systemcode
+		and  billtype='04'
+		and taskdsh.isdeptapproved is null) as a
+		<!-- select count(*) from exm001,(select [operators],systemcode,isdeptapproved from taskdsh group by [operators],systemcode,isdeptapproved) as A
+		where A.operators=#{username}
+		and exm001.checkid=A.systemcode
+		and (paychecksign='1' and feekink='f01') and  billtype='01'
+		and A.isdeptapproved is null -->
+	</select>
+</mapper>

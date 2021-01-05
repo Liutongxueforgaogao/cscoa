@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.hub.dao.DetailsInformationDao">
+<resultMap id="Rtm001" type="com.hub.entity.Rtm001" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="checkid" property="checkid" jdbcType="VARCHAR" />
+    <result column="paychecksign" property="paychecksign" jdbcType="VARCHAR" />
+    <result column="ym" property="ym" jdbcType="VARCHAR" />
+    <result column="checkdate" property="checkdate" jdbcType="VARCHAR" />
+    <result column="staff" property="staff" jdbcType="VARCHAR" />
+    <result column="companyno" property="companyno" jdbcType="VARCHAR" />
+    <result column="revtype" property="revtype" jdbcType="VARCHAR" />
+    <result column="payee" property="payee" jdbcType="VARCHAR" />
+    <result column="payeename" property="payeename" jdbcType="VARCHAR" />
+    <result column="revcompany" property="revcompany" jdbcType="VARCHAR" />
+    <result column="revcompanyname" property="revcompanyname" jdbcType="VARCHAR" />
+    <result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+    <result column="feecompanyname" property="feecompanyname" jdbcType="VARCHAR" />
+    <result column="feeunit" property="feeunit" jdbcType="VARCHAR" />
+    <result column="feeunitno" property="feeunitno" jdbcType="VARCHAR" />
+    <result column="proceedingname" property="proceedingname" jdbcType="VARCHAR" />
+    <result column="proceedingno" property="proceedingno" jdbcType="VARCHAR" />
+    <result column="prepayno" property="prepayno" jdbcType="VARCHAR" />
+    <result column="isprepya" property="isprepya" jdbcType="VARCHAR" />
+    <result column="prepayamt" property="prepayamt" jdbcType="DOUBLE" />
+    <result column="chaeamt" property="chaeamt" jdbcType="DOUBLE" />
+    <result column="supply" property="supply" jdbcType="VARCHAR" />
+    <result column="prepaydate" property="prepaydate" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="paytype" property="paytype" jdbcType="VARCHAR" />
+    <result column="affirmer" property="affirmer" jdbcType="VARCHAR" />
+    <result column="affirmestate" property="affirmestate" jdbcType="VARCHAR" />
+    <result column="affirmtime" property="affirmtime" jdbcType="VARCHAR" />
+    <result column="affirmexplain" property="affirmexplain" jdbcType="VARCHAR" />
+    <result column="payer" property="payer" jdbcType="VARCHAR" />
+    <result column="payestate" property="payestate" jdbcType="VARCHAR" />
+    <result column="paytime" property="paytime" jdbcType="VARCHAR" />
+    <result column="evectionreason" property="evectionreason" jdbcType="VARCHAR" />
+    <result column="otherreason" property="otherreason" jdbcType="VARCHAR" />
+    <result column="evectionarea" property="evectionarea" jdbcType="VARCHAR" />
+    <result column="inputer" property="inputer" jdbcType="VARCHAR" />
+    <result column="inputdate" property="inputdate" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="sccqstaff" property="sccqstaff" jdbcType="VARCHAR" />
+    <result column="issccq" property="issccq" jdbcType="BIT" />
+    <result column="sccqtime" property="sccqtime" jdbcType="VARCHAR" />
+    <result column="approvedstaff" property="approvedstaff" jdbcType="VARCHAR" />
+    <result column="isapproved" property="isapproved" jdbcType="BIT" />
+    <result column="approvedtime" property="approvedtime" jdbcType="VARCHAR" />
+    <result column="closedstaff" property="closedstaff" jdbcType="VARCHAR" />
+    <result column="isclosed" property="isclosed" jdbcType="BIT" />
+    <result column="closedtime" property="closedtime" jdbcType="VARCHAR" />
+    <result column="feekink" property="feekink" jdbcType="VARCHAR" />
+    <result column="totalamount" property="totalamount" jdbcType="DOUBLE" />
+    <result column="advanceamount" property="advanceamount" jdbcType="REAL" />
+    <result column="evectiontime" property="evectiontime" jdbcType="VARCHAR" />
+    <result column="endtime" property="endtime" jdbcType="VARCHAR" />
+    <result column="totaldate" property="totaldate" jdbcType="DOUBLE" />
+    <result column="totalhour" property="totalhour" jdbcType="DOUBLE" />
+    <result column="backprepayno" property="backprepayno" jdbcType="VARCHAR" />
+    <result column="backamount" property="backamount" jdbcType="DOUBLE" />
+    <result column="invoiceno" property="invoiceno" jdbcType="VARCHAR" />
+    <result column="billtype" property="billtype" jdbcType="VARCHAR" />
+    <result column="iswriteoff" property="iswriteoff" jdbcType="BIT" />
+    <result column="preclosedate" property="preclosedate" jdbcType="VARCHAR" />
+    <result column="paybankcode" property="paybankcode" jdbcType="VARCHAR" />
+    <result column="bankflag" property="bankflag" jdbcType="VARCHAR" />
+    <result column="whcqy" property="whcqy" jdbcType="VARCHAR" />
+    <result column="oldcheckid" property="oldcheckid" jdbcType="VARCHAR" />
+    <result column="taxtype" property="taxtype" jdbcType="VARCHAR" />
+    <result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+    <result column="affirmtimestamp" property="affirmtimestamp" jdbcType="VARCHAR" />
+    <result column="shuilv" property="shuilv" jdbcType="VARCHAR" />
+    <result column="taxrate" property="taxrate" jdbcType="DOUBLE" />
+    <result column="feeheji" property="feeheji" jdbcType="DOUBLE" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="isdeptapproved" property="isdeptapproved" jdbcType="BIT" />
+    <result column="deptapprovedstaff" property="deptapprovedstaff" jdbcType="VARCHAR" />
+    <result column="deptapprovedtime" property="deptapprovedtime" jdbcType="VARCHAR" />
+    <result column="imageTwo" property="imagetwo" jdbcType="VARCHAR" />
+    <result column="imageThree" property="imagethree" jdbcType="VARCHAR" />
+    <result column="imageFour" property="imagefour" jdbcType="VARCHAR" />
+    <result column="imageFive" property="imagefive" jdbcType="VARCHAR" />
+    <result column="JHCompanyF" property="jhcompanyf" jdbcType="VARCHAR" />
+    <result column="JHCompanyS" property="jhcompanys" jdbcType="VARCHAR" />
+    <result column="routid" property="routid" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="itemtype" property="itemtype" jdbcType="INTEGER" />
+    <result column="bank" property="bank" jdbcType="VARCHAR" />
+    <result column="bankcode" property="bankcode" jdbcType="VARCHAR" />
+    <result column="rentno" property="rentno" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="Rtm00101" type="com.hub.entity.Rtm00101" >
+    <result column="currtype" property="currtype" jdbcType="VARCHAR" />
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="checkid" property="checkid" jdbcType="VARCHAR" />
+    <result column="subjectcode" property="subjectcode" jdbcType="VARCHAR" />
+    <result column="subjectname" property="subjectname" jdbcType="VARCHAR" />
+    <result column="item" property="item" jdbcType="VARCHAR" />
+    <result column="itemname" property="itemname" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="deptno" property="deptno" jdbcType="VARCHAR" />
+    <result column="deptname" property="deptname" jdbcType="VARCHAR" />
+    <result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+    <result column="feecompanyname" property="feecompanyname" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="invoiceno" property="invoiceno" jdbcType="VARCHAR" />
+    <result column="taxamt" property="taxamt" jdbcType="DOUBLE" />
+    <result column="taxamtbak" property="taxamtbak" jdbcType="DOUBLE" />
+    <result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+    <result column="totalamount" property="totalamount" jdbcType="DOUBLE" />
+  </resultMap>
+<resultMap id="Rtm002" type="com.hub.entity.Rtm002" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="checkid" property="checkid" jdbcType="VARCHAR" />
+    <result column="paychecksign" property="paychecksign" jdbcType="VARCHAR" />
+    <result column="ym" property="ym" jdbcType="VARCHAR" />
+    <result column="checkdate" property="checkdate" jdbcType="VARCHAR" />
+    <result column="staff" property="staff" jdbcType="VARCHAR" />
+    <result column="companyno" property="companyno" jdbcType="VARCHAR" />
+    <result column="revtype" property="revtype" jdbcType="VARCHAR" />
+    <result column="payee" property="payee" jdbcType="VARCHAR" />
+    <result column="payeename" property="payeename" jdbcType="VARCHAR" />
+    <result column="revcompany" property="revcompany" jdbcType="VARCHAR" />
+    <result column="revcompanyname" property="revcompanyname" jdbcType="VARCHAR" />
+    <result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+    <result column="feecompanyname" property="feecompanyname" jdbcType="VARCHAR" />
+    <result column="feeunit" property="feeunit" jdbcType="VARCHAR" />
+    <result column="feeunitno" property="feeunitno" jdbcType="VARCHAR" />
+    <result column="proceedingname" property="proceedingname" jdbcType="VARCHAR" />
+    <result column="proceedingno" property="proceedingno" jdbcType="VARCHAR" />
+    <result column="prepayno" property="prepayno" jdbcType="VARCHAR" />
+    <result column="isprepya" property="isprepya" jdbcType="VARCHAR" />
+    <result column="prepayamt" property="prepayamt" jdbcType="DOUBLE" />
+    <result column="chaeamt" property="chaeamt" jdbcType="DOUBLE" />
+    <result column="supply" property="supply" jdbcType="VARCHAR" />
+    <result column="prepaydate" property="prepaydate" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="paytype" property="paytype" jdbcType="VARCHAR" />
+    <result column="affirmer" property="affirmer" jdbcType="VARCHAR" />
+    <result column="affirmestate" property="affirmestate" jdbcType="VARCHAR" />
+    <result column="affirmtime" property="affirmtime" jdbcType="VARCHAR" />
+    <result column="affirmexplain" property="affirmexplain" jdbcType="VARCHAR" />
+    <result column="payer" property="payer" jdbcType="VARCHAR" />
+    <result column="payestate" property="payestate" jdbcType="VARCHAR" />
+    <result column="paytime" property="paytime" jdbcType="VARCHAR" />
+    <result column="evectionreason" property="evectionreason" jdbcType="VARCHAR" />
+    <result column="otherreason" property="otherreason" jdbcType="VARCHAR" />
+    <result column="evectionarea" property="evectionarea" jdbcType="VARCHAR" />
+    <result column="inputer" property="inputer" jdbcType="VARCHAR" />
+    <result column="inputdate" property="inputdate" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="sccqstaff" property="sccqstaff" jdbcType="VARCHAR" />
+    <result column="issccq" property="issccq" jdbcType="BIT" />
+    <result column="sccqtime" property="sccqtime" jdbcType="VARCHAR" />
+    <result column="approvedstaff" property="approvedstaff" jdbcType="VARCHAR" />
+    <result column="isapproved" property="isapproved" jdbcType="BIT" />
+    <result column="approvedtime" property="approvedtime" jdbcType="VARCHAR" />
+    <result column="closedstaff" property="closedstaff" jdbcType="VARCHAR" />
+    <result column="isclosed" property="isclosed" jdbcType="BIT" />
+    <result column="closedtime" property="closedtime" jdbcType="VARCHAR" />
+    <result column="feekink" property="feekink" jdbcType="VARCHAR" />
+    <result column="totalamount" property="totalamount" jdbcType="DOUBLE" />
+    <result column="advanceamount" property="advanceamount" jdbcType="REAL" />
+    <result column="evectiontime" property="evectiontime" jdbcType="VARCHAR" />
+    <result column="endtime" property="endtime" jdbcType="VARCHAR" />
+    <result column="totaldate" property="totaldate" jdbcType="DOUBLE" />
+    <result column="totalhour" property="totalhour" jdbcType="DOUBLE" />
+    <result column="backprepayno" property="backprepayno" jdbcType="VARCHAR" />
+    <result column="backamount" property="backamount" jdbcType="DOUBLE" />
+    <result column="invoiceno" property="invoiceno" jdbcType="VARCHAR" />
+    <result column="billtype" property="billtype" jdbcType="VARCHAR" />
+    <result column="iswriteoff" property="iswriteoff" jdbcType="BIT" />
+    <result column="preclosedate" property="preclosedate" jdbcType="VARCHAR" />
+    <result column="paybankcode" property="paybankcode" jdbcType="VARCHAR" />
+    <result column="bankflag" property="bankflag" jdbcType="VARCHAR" />
+    <result column="whcqy" property="whcqy" jdbcType="VARCHAR" />
+    <result column="oldcheckid" property="oldcheckid" jdbcType="VARCHAR" />
+    <result column="taxtype" property="taxtype" jdbcType="VARCHAR" />
+    <result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+    <result column="affirmtimestamp" property="affirmtimestamp" jdbcType="VARCHAR" />
+    <result column="shuilv" property="shuilv" jdbcType="VARCHAR" />
+    <result column="taxrate" property="taxrate" jdbcType="DOUBLE" />
+    <result column="feeheji" property="feeheji" jdbcType="DOUBLE" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="isdeptapproved" property="isdeptapproved" jdbcType="BIT" />
+    <result column="deptapprovedstaff" property="deptapprovedstaff" jdbcType="VARCHAR" />
+    <result column="deptapprovedtime" property="deptapprovedtime" jdbcType="VARCHAR" />
+    <result column="imageTwo" property="imagetwo" jdbcType="VARCHAR" />
+    <result column="imageThree" property="imagethree" jdbcType="VARCHAR" />
+    <result column="imageFour" property="imagefour" jdbcType="VARCHAR" />
+    <result column="imageFive" property="imagefive" jdbcType="VARCHAR" />
+    <result column="JHCompanyF" property="jhcompanyf" jdbcType="VARCHAR" />
+    <result column="JHCompanyS" property="jhcompanys" jdbcType="VARCHAR" />
+    <result column="routid" property="routid" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="itemtype" property="itemtype" jdbcType="INTEGER" />
+    <result column="bank" property="bank" jdbcType="VARCHAR" />
+    <result column="bankcode" property="bankcode" jdbcType="VARCHAR" />
+    <result column="rentno" property="rentno" jdbcType="VARCHAR" />
+    <result column="paydate" property="paydate" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="Rtm00201" type="com.hub.entity.Rtm00201" >
+    <result column="currtype" property="currtype" jdbcType="VARCHAR" />
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="checkid" property="checkid" jdbcType="VARCHAR" />
+    <result column="subjectcode" property="subjectcode" jdbcType="VARCHAR" />
+    <result column="subjectname" property="subjectname" jdbcType="VARCHAR" />
+    <result column="item" property="item" jdbcType="VARCHAR" />
+    <result column="itemname" property="itemname" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="deptno" property="deptno" jdbcType="VARCHAR" />
+    <result column="deptname" property="deptname" jdbcType="VARCHAR" />
+    <result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+    <result column="feecompanyname" property="feecompanyname" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="invoiceno" property="invoiceno" jdbcType="VARCHAR" />
+    <result column="taxamt" property="taxamt" jdbcType="DOUBLE" />
+    <result column="taxamtbak" property="taxamtbak" jdbcType="DOUBLE" />
+    <result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+    <result column="totalamount" property="totalamount" jdbcType="DOUBLE" />
+    <result column="preclosedate" property="preclosedate" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  
+	<resultMap type="com.hub.entity.DetailsInformation" id="DetailsInformation">
+		
+		<result column="billtype" property="billtype" />
+		<result column="checkid" property="checkid" />
+		<result column="checkdate" property="checkdate" jdbcType="VARCHAR"/>
+		<result column="staff" property="staff" />
+		<result column="feecompany" property="feecompany" />
+		<result column="feecompanyname" property="feecompanyname" />
+		<result column="feeunitno" property="feeunitno" />
+		<result column="feeunit" property="feeunit" />
+		<result column="revtype" property="revtype" />
+		<result column="payee" property="payee" />
+		<result column="payeename" property="payeename" />
+		<result column="proceedingname" property="proceedingname" />
+		<result column="revcompany" property="revcompany" />
+		<result column="revcompanyname" property="revcompanyname" />
+		<result column="proceedingno" property="proceedingno" />
+		<result column="remark" property="remark" />
+		<result column="routid" property="routid" />
+		<result column="status" property="status" />
+		<result column="prepayamt" property="prepayamt" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="amount" property="amount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="totalamount" property="totalamount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="backamount" property="backamount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="backprepayno" property="backprepayno" />
+		<result column="prepayno" property="prepayno" />
+		<result column="paytype" property="paytype" />
+		<result column="affirmestate" property="affirmestate" />
+		<result column="affirmtime" property="affirmtime" jdbcType="VARCHAR" />
+		<result column="affirmexplain" property="affirmexplain" />
+		<result column="payestate" property="payestate" />
+		<result column="paytime" property="paytime" jdbcType="VARCHAR" />
+		<result column="prepaydate" property="prepaydate" jdbcType="VARCHAR"/>
+		<result column="inputer" property="inputer" />
+		<result column="inputdate" property="inputdate" jdbcType="VARCHAR" />
+		<result column="approvedstaff" property="approvedstaff" />
+		<result column="isapproved" property="isapproved" />
+		<result column="approvedtime" property="approvedtime" jdbcType="VARCHAR" />
+		<result column="closedstaff" property="closedstaff" />
+		<result column="isclosed" property="isclosed" />
+		<result column="closedtime" property="closedtime" jdbcType="VARCHAR" />
+		<result column="bank" property="bank" jdbcType="VARCHAR"/>
+		<result column="bankcode" property="bankcode" jdbcType="VARCHAR"/>
+	</resultMap>
+	<resultMap type="com.hub.entity.InformationExm00101" id="InformationExm00101">
+		<result column="id" property="id" />
+		<result column="currtype" property="currtype" jdbcType="VARCHAR" />
+		<result column="invoiceno" property="invoiceno" jdbcType="VARCHAR" />
+		<result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+		<result column="taxamt" property="taxamt" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="totalamount" property="totalamount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="checkid" property="checkid" jdbcType="VARCHAR" />
+		<result column="subjectcode" property="subjectcode" jdbcType="VARCHAR" />
+		<result column="subjectname" property="subjectname" jdbcType="VARCHAR" />
+		<result column="item" property="item" jdbcType="VARCHAR" />
+		<result column="itemname" property="itemname" jdbcType="VARCHAR" />
+		<result column="amount" property="amount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="deptno" property="deptno" jdbcType="VARCHAR" />
+		<result column="deptname" property="deptname" jdbcType="VARCHAR" />
+		<result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+		<result column="feecompanyname" property="feecompanyname" jdbcType="VARCHAR" />
+		<result column="memo" property="memo" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap type="com.hub.entity.InformationExm00102" id="InformationExm00102">
+		<result column="id" property="id" />
+		<result column="payoutno" property="payoutno" jdbcType="VARCHAR" />
+		<result column="transportdate1" property="transportdate1" jdbcType="VARCHAR" />
+		<result column="checkid" property="checkid" jdbcType="VARCHAR" />
+		<result column="transportdate" property="transportdate" jdbcType="VARCHAR" />
+		<result column="hourarea" property="hourarea" jdbcType="VARCHAR" />
+		<result column="selocation" property="selocation" jdbcType="VARCHAR" />
+		<result column="distance" property="distance" jdbcType="FLOAT" />
+		<result column="mans" property="mans" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="amount" property="amount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="currtype" property="currtype" jdbcType="VARCHAR" />
+		<result column="memo" property="memo" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap type="com.hub.entity.InformationExm00103" id="InformationExm00103">
+		<result column="id" property="id" />
+		<result column="payoutno" property="payoutno" jdbcType="VARCHAR" />
+		<result column="checkid" property="checkid" jdbcType="VARCHAR" />
+		<result column="traveldate" property="traveldate" jdbcType="VARCHAR" />
+		<result column="hourarea" property="hourarea" jdbcType="VARCHAR" />
+		<result column="reason" property="reason" jdbcType="VARCHAR" />
+		<result column="amount" property="amount" typeHandler="com.hub.typehander.TwoDecimalFloatTypeHander" />
+		<result column="currtype" property="currtype" jdbcType="VARCHAR" />
+		<result column="memo" property="memo" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="exm00103" property="exm00103" jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap type="com.hub.entity.InfromationOfExm001Addition" id="InfromationOfExm001Addition">
+		<result column="checkid" property="checkid" jdbcType="VARCHAR" />
+		<result column="feeheji" property="feeheji" jdbcType="FLOAT" />
+		<result column="taxtype" property="taxtype" jdbcType="VARCHAR" />
+		<result column="isdichong" property="isdichong" jdbcType="VARCHAR" />
+		<result column="affirmtimestamp" property="affirmtimestamp" jdbcType="VARCHAR" />
+		<result column="shuilv" property="shuilv" jdbcType="VARCHAR" />
+		<result column="taxrate" property="taxrate" jdbcType="FLOAT" />
+		<result column="image" property="image" jdbcType="VARCHAR" />
+		<result column="imageTwo" property="imageTwo" jdbcType="VARCHAR" />
+		<result column="imageThree" property="imageThree" jdbcType="VARCHAR" />
+		<result column="imageFour" property="imageFour" jdbcType="VARCHAR" />
+		<result column="imageFive" property="imageFive" jdbcType="VARCHAR" />
+		<result column="JHCompanyF" property="JHCompanyF" jdbcType="VARCHAR" />
+		<result column="JHCompanyS" property="JHCompanyS" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<resultMap type="com.hub.entity.InformationFpm001" id="InformationFpm001">
+		<result column="checkdate" property="checkdate" jdbcType="VARCHAR" />
+		<result column="counts" property="counts" jdbcType="FLOAT" />
+		<result column="enddate" property="enddate" jdbcType="VARCHAR" />
+		<result column="header" property="header" jdbcType="VARCHAR" />
+		<result column="itemtype" property="itemtype" jdbcType="VARCHAR" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="revtype" property="revtype" jdbcType="VARCHAR" />
+		<result column="routid" property="routid" jdbcType="VARCHAR" />
+		<result column="staff" property="staff" jdbcType="VARCHAR" />
+		<result column="startdate" property="startdate" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="id" property="id" jdbcType="VARCHAR" />
+		<result column="checkid" property="checkid" jdbcType="VARCHAR" />
+		<result column="filetype" property="filetype" jdbcType="VARCHAR" />
+		<result column="stampertype" property="stampertype" jdbcType="VARCHAR" />
+		<result column="stampertype1" property="stampertype1" jdbcType="VARCHAR" />
+		<result column="stampertype2" property="stampertype2" jdbcType="VARCHAR" />
+		<result column="feecompany" property="feecompany" jdbcType="VARCHAR" />
+		<result column="inputer" property="inputer" jdbcType="VARCHAR" />
+		<result column="inputdate" property="inputdate" jdbcType="VARCHAR" />
+		<result column="deptapprovedstaff" property="deptapprovedstaff" jdbcType="VARCHAR" />
+		<result column="isdeptapproved" property="isdeptapproved" jdbcType="VARCHAR" />
+		<result column="deptapprovedtime" property="deptapprovedtime" jdbcType="VARCHAR" />
+		<result column="huiwen1" property="huiwen1" jdbcType="VARCHAR" />
+		<result column="huiwen2" property="huiwen2" jdbcType="VARCHAR" />
+		<result column="huiwen3" property="huiwen3" jdbcType="VARCHAR" />
+		<result column="image" property="image" jdbcType="VARCHAR" />
+		<result column="imageTwo" property="imageTwo" jdbcType="VARCHAR" />
+		<result column="imageThree" property="imageThree" jdbcType="VARCHAR" />
+		<result column="imageFour" property="imageFour" jdbcType="VARCHAR" />
+		<result column="imageFive" property="imageFive" jdbcType="VARCHAR" />
+		
+	</resultMap>
+	
+	
+	<select id="getAllDetailsInformation" resultMap="DetailsInformation" >
+	select * from  [exm001] 
+	where 
+		checkid=#{checkid}
+	</select>
+	
+	<select id="getAllInformationByExm00101" resultMap="InformationExm00101" >
+	select 	id,currtype,invoiceno,isdichong,taxamt,taxamtbak,totalamount,
+			checkid,subjectcode,subjectname,item,itemname,amount,deptno,
+			deptname,feecompany,feecompanyname,memo,remark
+	from 	exm00101
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getAllInformationByExm00102" resultMap="InformationExm00102" >
+	select 	payoutno,transportdate1,id,checkid,transportdate,hourarea,
+			selocation,distance,mans,subject,amount,currtype,memo,remark
+	from 	exm00102
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getAllInformationByExm00103" resultMap="InformationExm00103" >
+	select 	payoutno,id,checkid,traveldate,hourarea,reason,amount,currtype,memo,remark,exm00103
+	from 	exm00103
+	where 	checkid=#{checkid}
+	</select>
+	<select id="getAllInformationOfExm001Addition" resultMap="InfromationOfExm001Addition" >
+	select 	checkid,[feeheji],[taxtype],[isdichong],[affirmtimestamp],[shuilv],
+			[taxrate],[image],[imageTwo],[imageThree],[imageFour],[imageFive],
+			[JHCompanyF],[JHCompanyS]
+	from 	exm001
+	where 	checkid=#{checkid}
+	</select>
+
+	<select id="getName" resultType="String" >
+	select 	empname
+	from 	s_employee
+	where 	empid=#{empid}
+	</select>
+
+	<select id="getCompany" resultType="String" >
+	select companyname from companycode where companyid=#{companyid}
+	</select>
+	
+	<select id="getRevcompanyname" resultType="String" >
+	select applyname from bas_landlords where applycode=#{revcompany, jdbcType=VARCHAR} and companyid=#{feecompany,jdbcType=VARCHAR}
+	</select>
+	
+	<!-- String getBankAndBankno(
+	@Param("applycode")String applycode,
+	@Param("companyid")String companyid);
+	 -->
+	<select id="getBankAndBankno" resultType="String" >
+		select bank+';'+bankcode from bas_landlords 
+		where companyid=#{applycode, jdbcType=VARCHAR} 
+		and applycode=#{companyid,jdbcType=VARCHAR}
+	</select>
+	
+	
+	<select id="getExpensename" resultType="String" >
+	select expensename from bas_expensetype where expensetype=#{expensetype}
+	</select>
+	
+	<select id="getPaytype" resultType="String" >
+	select drawmannername from bas_drawmanner where drawmannerno=#{drawmannerno}
+	</select>
+
+	<select id="getAllInformationFpm001" resultMap="InformationFpm001" >
+	select 	*  from 	fpm001
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getRtm001DetailsInformation" resultMap="Rtm001" >
+	select 	*  from 	rtm001
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getAllInformationByRtm00101" resultMap="Rtm00101" >
+	select 	*  from 	rtm00101
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getRtm002DetailsInformation" resultMap="Rtm002" >
+	select 	*  from 	rtm002
+	where 	checkid=#{checkid}
+	</select>
+	
+	<select id="getAllInformationByRtm00201" resultMap="Rtm00201" >
+	select 	*  from 	rtm00201
+	where 	checkid=#{checkid}
+	</select>
+	
+	
+	
+	
+	
+</mapper>
+
+
+
+                    
+	<!-- 主表exm001
+		inputdate		    输入时间                   
+		ApprovedStaff	    审核人
+		IsApproved		    审核状态
+		ApprovedTime	    审核时间
+		closedstaff		    记帐人
+		isclosed		    记帐状态
+		closedtime		    记帐时间
+		
+		backprepayno	    缴回单号
+		prepayno		    暂付单号
+		paytype			    领款方式
+		affirmestate	    财务确认状态
+		affirmtime		    确认时间
+		affirmexplain	    确认说明
+		payestate		    付款状态
+		paytime			    付款时间
+		prepaydate		    预期付款日期
+		inputer			    输入人
+		
+		revcompany		    收款单位
+		revcompanyname	    收款单位名称
+		proceedingno	    费用事项
+		remark			    事项说明
+		routid			    流程id
+		status			    审批状态                  
+		prepayamt		    暂付金额
+		amount			    实付金额
+		totalamount	   	    费用合计
+		backamount		    缴回金额
+		
+		checkid			   验收单号
+		checkdate		    申请日期
+		staff			    申请人
+		feecompany		    费用归属公司
+		feeunitno		    部门编码
+		feeunit			    部门名称
+		revtype			    受款人性质
+		payee			    受款人
+		payeename		    受款人姓名
+		proceedingname	    费用事项名称
+ -->
+<!--exm00101 
+		付款验收单细表
+		id			id
+		currtype	币种
+		invoiceno	发票号码
+		isdichong	是否可抵冲
+		taxamt		税额
+		taxamtbak	税额
+		totalamount	去税金额
+		checkid		验收单号
+		subjectcode	会计科目
+		subjectname	科目名称
+		item		事项
+		itemname	事项名称
+		amount		金额	
+		deptno		部门
+		deptname	部门名称
+		feecompany	费用归属公司
+		feecompanyname	归属公司名称
+		memo		辅助
+		remark		事项 
+-->
+

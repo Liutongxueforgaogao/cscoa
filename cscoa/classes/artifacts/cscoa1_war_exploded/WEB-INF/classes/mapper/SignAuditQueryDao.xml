@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.hub.dao.SignAuditQueryDao">
+
+	<resultMap type="com.hub.entity.AuditLevelQuery" id="AuditLevelQuery">
+		<id column="id" property="id"/>
+		<result column="stepremarks" property="stepremarks" />
+		<result column="isdeptapproved" property="zt" />
+		<result column="remessage" property="suggestionAndTime" />
+	</resultMap>
+	<resultMap type="com.hub.entity.UserAndSuggest" id="UserAndSuggest">
+		<result column="stepremarks" property="user" />
+		<result column="remessage" property="suggest" />
+	</resultMap>
+	
+	<select id="getAuditLevelQuerySign" parameterType="String" resultMap="AuditLevelQuery" >
+		select id,stepremarks,isdeptapproved,remessage from taskdsh where operators=#{0} and systemcode=#{1}
+	</select>
+	
+	<select id="getAllPeopleSuggestSign" parameterType="String" resultMap="UserAndSuggest" >
+		select stepremarks,remessage from taskdsh where systemcode=#{0} 
+	</select>
+	
+	<update id="insertSuggestSign" statementType="CALLABLE">
+		{call hqsh_huifucsc(#{0},#{1},#{2},#{3},#{4})}  
+	</update>
+	
+	<update id="disagreeSign" parameterType="String">
+		update taskdsh set isdeptapproved = '0' where isdeptapproved is null and operators=#{0} and systemcode=#{1}
+	</update>
+	<update id="agreeSign" parameterType="String">
+		update taskdsh set isdeptapproved = '1' where isdeptapproved is null and operators=#{0} and systemcode=#{1}
+	</update>
+	
+	<select id="getStatusSign" parameterType="String" resultType="String">
+		select top 1 isdeptapproved from taskdsh where operators=#{0} and systemcode=#{1} order by id desc
+	</select>
+	
+	
+
+	
+</mapper>

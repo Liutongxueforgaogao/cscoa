@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/hub/dao/AuditPageDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/dao/TempAuditPageDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/dao/UserLevelDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/entity/UserLevel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/entity/exm001表释义.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/service/AuditPageService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/service/impl/AuditPageServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/KsmController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/MultiController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/SignController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/SingleController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/TempController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/hub/web/UserController.java" charset="GBK" />
+  </component>
+</project>
